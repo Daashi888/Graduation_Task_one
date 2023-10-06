@@ -4,6 +4,66 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "苗字" %><br />
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "名前" %><br />
+    <%= f.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "ユーザーネーム" %><br />
+    <%= f.text_field :nickname, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "郵便番号" %><br />
+    <%= f.text_field :postal_code, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "都道府県" %><br />
+    <%= f.select :prefecture, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "市区町村" %><br />
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "番地" %><br />
+    <%= f.text_field :ward_town, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "建物名・部屋番号" %><br />
+    <%= f.text_field :other_address, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "性別" %><br />
+    <%= f.select :sex, {"男性": 0, "女性": 1, "答えたくない": 2}, { include_blank: "選択してください"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label "職業" %><br />
+    <%= f.text_field :occupation, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.select "権限種別" %><br />
+    <%= f.text_field :role, {"里親募集主": 0, "譲渡希望者": 1}, { include_blank: "選択してください"} %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
