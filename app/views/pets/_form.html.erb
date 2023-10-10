@@ -1,0 +1,82 @@
+<%= form_with(model: pet) do |form| %>
+  <% if pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+        <% pet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_area :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :select_animal %>
+    <%= form.number_field :select_animal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.text_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sex %>
+    <%= form.number_field :sex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :negotiating %>
+    <%= form.check_box :negotiating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_location %>
+    <%= form.text_field :current_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prefecture %>
+    <%= form.text_field :prefecture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dog_breed %>
+    <%= form.text_field :dog_breed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cat_species %>
+    <%= form.text_field :cat_species %>
+  </div>
+
+  <div class="field">
+    <%= form.label :castrated %>
+    <%= form.check_box :castrated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vaccinated %>
+    <%= form.check_box :vaccinated %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
