@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: %i[ show edit update destroy ]
-
+  # before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   # GET /pets or /pets.json
   def index
     @pets = Pet.all
