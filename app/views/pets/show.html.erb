@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @pet.image %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pet.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @pet.content %>
+</p>
+
+<p>
+  <strong>Select animal:</strong>
+  <%= @pet.select_animal %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @pet.age %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @pet.sex %>
+</p>
+
+<p>
+  <strong>Negotiating:</strong>
+  <%= @pet.negotiating %>
+</p>
+
+<p>
+  <strong>Current location:</strong>
+  <%= @pet.current_location %>
+</p>
+
+<p>
+  <strong>Prefecture:</strong>
+  <%= @pet.prefecture %>
+</p>
+
+<p>
+  <strong>Dog breed:</strong>
+  <%= @pet.dog_breed %>
+</p>
+
+<p>
+  <strong>Cat species:</strong>
+  <%= @pet.cat_species %>
+</p>
+
+<p>
+  <strong>Castrated:</strong>
+  <%= @pet.castrated %>
+</p>
+
+<p>
+  <strong>Vaccinated:</strong>
+  <%= @pet.vaccinated %>
+</p>
+
+<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<%= link_to 'Back', pets_path %>

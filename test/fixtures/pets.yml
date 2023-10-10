@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyText
+  title: MyString
+  content: MyText
+  select_animal: 1
+  age: MyString
+  sex: 1
+  negotiating: false
+  current_location: MyString
+  prefecture: MyString
+  dog_breed: MyString
+  cat_species: MyString
+  castrated: false
+  vaccinated: false
+
+two:
+  image: MyText
+  title: MyString
+  content: MyText
+  select_animal: 1
+  age: MyString
+  sex: 1
+  negotiating: false
+  current_location: MyString
+  prefecture: MyString
+  dog_breed: MyString
+  cat_species: MyString
+  castrated: false
+  vaccinated: false
