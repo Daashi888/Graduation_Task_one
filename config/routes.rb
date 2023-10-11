@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/index'
   resources :favorites, only: [:create, :destroy]
   devise_for :users
   resources :pets
