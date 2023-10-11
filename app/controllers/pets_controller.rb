@@ -8,7 +8,8 @@ class PetsController < ApplicationController
 
   # GET /pets/1 or /pets/1.json
   def show
-    #@favorite = current_user.favorites.find_by(pet_id: @pet.id)
+    set_pet
+    @favorite = current_user.favorites.find_by(pet_id: @pet.id)
   end
 
   # GET /pets/new
@@ -18,11 +19,13 @@ class PetsController < ApplicationController
 
   # GET /pets/1/edit
   def edit
+    set_pet
+    binding.pry
   end
 
   # POST /pets or /pets.json
   def create
-    @pet = Pet.new(pet_params)
+    @pet = current_user.pets.build(pet_params)
 
     respond_to do |format|
       if @pet.save
@@ -37,6 +40,7 @@ class PetsController < ApplicationController
 
   # PATCH/PUT /pets/1 or /pets/1.json
   def update
+    set_pet
     respond_to do |format|
       if @pet.update(pet_params)
         format.html { redirect_to pet_url(@pet), notice: "Pet was successfully updated." }
@@ -50,6 +54,7 @@ class PetsController < ApplicationController
 
   # DELETE /pets/1 or /pets/1.json
   def destroy
+    set_pet
     @pet.destroy
 
     respond_to do |format|
