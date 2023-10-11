@@ -23,7 +23,8 @@
   <tbody>
     <% @pets.each do |pet| %>
       <tr>
-        <td><%= pet.image %></td>
+        <td><#%= pet.image %></td>
+        <td><%= image_tag pet.image.url, size:"80x80" %></td>
         <td><%= pet.title %></td>
         <td><%= pet.content %></td>
         <td><%= pet.select_animal %></td>
