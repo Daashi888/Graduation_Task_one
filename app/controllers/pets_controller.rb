@@ -4,6 +4,8 @@ class PetsController < ApplicationController
   # GET /pets or /pets.json
   def index
     @pets = Pet.all
+    @q = Pet.ransack(params[:q])
+    @pets = @q.result(distinct: true)
   end
 
   # GET /pets/1 or /pets/1.json
