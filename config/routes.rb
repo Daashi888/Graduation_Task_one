@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   get 'users/index'
+  get 'users/show'
+  get 'users/index'
   resources :favorites, only: [:create, :destroy]
-  devise_for :users
   resources :pets
   root 'pets#index'
+
+  devise_for :users
+  resources :users, only: [:index, :show]
   
   resources :conversations do
     resources :messages

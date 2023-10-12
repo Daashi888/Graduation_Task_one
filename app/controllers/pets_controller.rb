@@ -75,8 +75,4 @@ class PetsController < ApplicationController
     def pet_params
       params.require(:pet).permit(:image, :title, :content, :select_animal, :age, :sex, :negotiating, :current_location, :prefecture, :dog_breed, :cat_species, :castrated, :vaccinated)
     end
-
-    def pet_params
-      params.require(:pet).permit(:image, :image_cache)
-    end
 end
