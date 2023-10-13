@@ -14,8 +14,8 @@
   <tbody>
     <%= search_form_for @q do |f| %>
 
-      <%= f.label :select_animal_or_prefecture, "Keyword" %>
-      <%= f.search_field :title_cont %>
+      <%= f.label :select_animal, "Keyword" %>
+      <%= f.search_field :select_animal_cont, Pet.select_animals  %>
     
       <%= f.label :age %>
       <%= f.number_field :age_gteq %>以上〜
@@ -25,7 +25,7 @@
       <%= f.radio_button :sex_eq, '', {:checked => true} %>指定なし
       <%= f.radio_button :sex_eq, 1 %>オス
       <%= f.radio_button :sex_eq, 2 %>メス
-    
+      
       <%= f.submit "検索" %>
     <% end %>
 

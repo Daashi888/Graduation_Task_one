@@ -22,7 +22,6 @@ class PetsController < ApplicationController
   # GET /pets/1/edit
   def edit
     set_pet
-    binding.pry
   end
 
   # POST /pets or /pets.json

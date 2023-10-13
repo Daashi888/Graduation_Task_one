@@ -10,4 +10,13 @@ class Pet < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["favorites", "user"]
   end
+
+  scope :early_registration_date, -> {order(created_at :asc)}
+  scope :old_registration_date, -> {order(created_at: :desc)}
+
+  scope :name_search, -> (name){where('title LIKE ?' , "%#{name}%")}
+  scope :status_search, -> (p_status){where(status: p_status)}
+
+  enum select_animal: { 犬: 0, 猫: 1 }
+  enum sex: { オス: 0, メス: 1 }
 end
