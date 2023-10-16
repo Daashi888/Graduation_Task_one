@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
-  get 'users/index'
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy, :index]
   resources :pets
   root 'pets#index'
 
