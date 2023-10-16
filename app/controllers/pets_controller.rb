@@ -4,8 +4,16 @@ class PetsController < ApplicationController
   # GET /pets or /pets.json
   def index
     @pets = Pet.all
-    @q = Pet.ransack(params[:q])
-    @pets = @q.result(distinct: true)
+    if params[:early_registration_date]
+      # @pet_searchpets = @pet_searchpets.sort_limit
+      @pets = @pets.early_registration_date
+    elsif params[:old_registration_date]
+      @pets = @pets.old_registration_date
+    # elsif params[:sort_sex]
+      # @tasks = Pet.
+    end
+    @pets = @pets.title(params[:search]) if params[:search].present? 
+    @pets = @pets.select_animal(params[:select_animal]) if params[:select_animal].present? 
   end
 
   # GET /pets/1 or /pets/1.json
@@ -16,6 +24,7 @@ class PetsController < ApplicationController
 
   # GET /pets/new
   def new
+    recruiter_check
     @pet = Pet.new
   end
 
@@ -73,5 +82,11 @@ class PetsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def pet_params
       params.require(:pet).permit(:image, :title, :content, :select_animal, :age, :sex, :negotiating, :current_location, :prefecture, :dog_breed, :cat_species, :castrated, :vaccinated)
+    end
+
+    def recruiter_check
+      if current_user.role != 0
+        redirect_to pets_path
+      end
     end
 end

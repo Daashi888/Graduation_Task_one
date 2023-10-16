@@ -17,18 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :タイトル %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
     <%= form.label :本文、詳細情報や募集要項など %>
     <%= form.text_area :content %>
   </div>
 
   <div class="field">
     <%= form.label :犬もしくは猫を選択してください %>
-    <%= form.select :select_animal, ["犬", "猫"], { include_blank: "選択してください"}%>
+    <%= form.select :select_animal, ["犬", "猫"], include_blank: true %>
   </div>
 
   <div class="field">
