@@ -1,42 +1,38 @@
 <h1>Pets</h1>
+<p id="notice"><%= notice %></p>
+
+<#%= form_with(url: pets_path, method: :get, local: true) do |form| %>
+  <#%= form.text_field :search %>
+  <#%= form.submit 'Search' %>
+<#% end %>
+
+<#%= search_form_for @q do |f| %>
+  <#%= f.label :title, "キーワードを入力してください" %>
+  <#%= f.search_field :title_cont %>
+
+  <#%= f.submit "検索" %>
+<#% end %>
+
+<p>
+  <%= link_to '新しい順', pets_path(early_registration_date: "true") %>
+  <%= link_to '古い順', pets_path(old_registration_date: "true") %>
+</p>
 
 <table>
   <thead>
     <tr>
       <th>Image</th>
-      <th>Title</th>
       <th>Content</th>
-      <th>Select animal</th>
-      <th>Age</th>
-      <th>Sex</th>
-      <th>Negotiating</th>
-      <th>Current location</th>
-      <th>Prefecture</th>
-      <th>Dog breed</th>
-      <th>Cat species</th>
-      <th>Castrated</th>
-      <th>Vaccinated</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+
     <% @pets.each do |pet| %>
       <tr>
-        <td><#%= pet.image %></td>
-        <td><#%= image_tag pet.image.url, size:"80x80" %></td>
-        <td><%= pet.title %></td>
+        <td><%= image_tag pet.image.url, size:"80x80" %></td>
         <td><%= pet.content %></td>
-        <td><%= pet.select_animal %></td>
-        <td><%= pet.age %></td>
-        <td><%= pet.sex %></td>
-        <td><%= pet.negotiating %></td>
-        <td><%= pet.current_location %></td>
-        <td><%= pet.prefecture %></td>
-        <td><%= pet.dog_breed %></td>
-        <td><%= pet.cat_species %></td>
-        <td><%= pet.castrated %></td>
-        <td><%= pet.vaccinated %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -48,3 +44,4 @@
 <br>
 
 <%= link_to 'New Pet', new_pet_path %>
+<%= link_to 'お気に入り登録一覧', favorites_path %>
