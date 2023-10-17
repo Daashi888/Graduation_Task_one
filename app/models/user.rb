@@ -22,4 +22,40 @@ class User < ApplicationRecord
      福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,
      沖縄県:47
    }
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.last_name = "ゲスト"
+      user.first_name = "様"
+      user.nickname = "ゲスト様"
+      user.postal_code = 1058511
+      user.prefecture = "東京都"
+      user.city = "港区"
+      user.ward_town = "六本木"
+      user.sex = "etc"
+      user.occupation = "システムエンジニア"
+      user.role = "recruiter"
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
+    end
+  end
+
+  def self.guest_admin
+    find_or_create_by!(email: 'guest_admin@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.last_name = "管理者"
+      user.first_name = "ゲスト様"
+      user.nickname = "管理者ゲスト様"
+      user.postal_code = 1058511
+      user.prefecture = "東京都"
+      user.city = "港区"
+      user.ward_town = "六本木"
+      user.sex = "etc"
+      user.occupation = "システムエンジニア"
+      user.role = "admin"
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
+    end
+  end
 end
