@@ -33,15 +33,16 @@
       <tr>
         <td><%= image_tag pet.image.url, size:"80x80" %></td>
         <td><%= pet.content %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+          <td><%= link_to 'Show', pet %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Pet', new_pet_path %>
-<%= link_to 'お気に入り登録一覧', favorites_path %>
+<% if current_user %>
+  <% if current_user.role == "recruiter" %>
+    <%= link_to 'New Pet', new_pet_path %>
+  <% end %>

@@ -15,3 +15,8 @@
 
 <%= link_to '飼い主の画面へ', user_path(@pet.user) %>
 <%= link_to 'Back', pets_path %>
+
+<% if current_user.role == 0 && @pet.user_id == current_user.id %>
+  <%= link_to 'Edit', edit_pet_path(pet) %>
+  <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

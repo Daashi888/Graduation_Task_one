@@ -13,7 +13,7 @@ class PetsController < ApplicationController
     # @pets = @pets.title(params[:search]) if params[:search].present? 
     # @pets = @pets.select_animal(params[:select_animal]) if params[:select_animal].present?
     #@q = Pet.ransack(params[:q])
-    #@pets = @q.result(distinct: true)
+    #@pets = @q.result(distinct: true).includes(:pet).page(params[:page]).order(title)
   end
 
   # GET /pets/1 or /pets/1.json
@@ -85,7 +85,7 @@ class PetsController < ApplicationController
     end
 
     def recruiter_check
-      if current_user.role != 0
+      if current_user.role != "recruiter"
         redirect_to pets_path
       end
     end

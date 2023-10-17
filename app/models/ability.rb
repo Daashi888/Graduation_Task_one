@@ -4,7 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.try(:admin?)
+    if user.role == 2
       can :access, :rails_admin
       can :manage, :all
     # Define abilities for the user here. For example:
