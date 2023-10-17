@@ -4,16 +4,15 @@ class PetsController < ApplicationController
   # GET /pets or /pets.json
   def index
     @pets = Pet.all
-    if params[:early_registration_date]
-      # @pet_searchpets = @pet_searchpets.sort_limit
-      @pets = @pets.early_registration_date
-    elsif params[:old_registration_date]
+    @search = @pets.ransack(params[:q])
+    @pets = @search.result
+  
+    case params[:sort]
+    when "1"
       @pets = @pets.old_registration_date
+    when "2"
+      @pets = @pets.early_registration_date
     end
-    # @pets = @pets.title(params[:search]) if params[:search].present? 
-    # @pets = @pets.select_animal(params[:select_animal]) if params[:select_animal].present?
-    #@q = Pet.ransack(params[:q])
-    #@pets = @q.result(distinct: true).includes(:pet).page(params[:page]).order(title)
   end
 
   # GET /pets/1 or /pets/1.json

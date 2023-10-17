@@ -1,17 +1,19 @@
 <h1>Pets</h1>
 <p id="notice"><%= notice %></p>
 
-<#%= form_with(url: pets_path, method: :get, local: true) do |form| %>
-  <#%= form.text_field :search %>
-  <#%= form.submit 'Search' %>
-<#% end %>
-
-<#%= search_form_for @q do |f| %>
-  <#%= f.label :title, "キーワードを入力してください" %>
-  <#%= f.search_field :title_cont %>
-
-  <#%= f.submit "検索" %>
-<#% end %>
+<%= search_form_for @search, url: pets_path do |f| %>
+  <div class="row">
+    <div>
+      <div>
+        <%= f.select :select_animal_eq, Pet.select_animals_i18n.invert.map{|key, value| [key, Pet.select_animals[value]]}, { include_blank: "選択してください" } %>
+        <%= select_tag "sort", options_for_select([['--選択してください--', ''], ['新しい順', 1], ['古い順', 2]]) %>
+      </div>
+      <div>
+        <%= f.submit %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <p>
   <%= link_to '新しい順', pets_path(early_registration_date: "true") %>

@@ -5,22 +5,20 @@
   <%= image_tag @pet.image.url %>
 </p>
 
-<#% if current_user.role != "recruiter" %>
-    <#%= link_to 'お気に入り登録一覧', favorites_path %>
-  <#% end %>
-
-<% unless @pet.user_id == current_user.id %>
-  <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'お気に入りする', favorites_path(pet_id: @pet.id), method: :post, class: 'btn btn-primary' %>
+<% if current_user.role != "recruiter" %>
+  <% unless @pet.user_id == current_user.id %>
+    <% if @favorite.present? %>
+      <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'お気に入りする', favorites_path(pet_id: @pet.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
   <% end %>
 <% end %>
 
 <%= link_to '飼い主の画面へ', user_path(@pet.user) %>
 <%= link_to 'Back', pets_path %>
 
-<% if current_user.role == 0 && @pet.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_pet_path(pet) %>
-  <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if current_user.role == "recruiter" && @pet.user_id == current_user.id %>
+  <%= link_to 'Edit', edit_pet_path(@pet) %>
+  <%= link_to 'Destroy', @pet, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>

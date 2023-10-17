@@ -10,6 +10,10 @@ ja:
         recruiter: "里親募集主"
         receiver: "譲渡希望者"
         admin: "管理者"
+    pet:
+      select_animal:
+        dog: "犬"
+        cat: "猫"
   activerecord:
     errors:
       messages:
