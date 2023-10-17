@@ -9,6 +9,7 @@ ja:
       role:
         recruiter: "里親募集主"
         receiver: "譲渡希望者"
+        admin: "管理者"
   activerecord:
     errors:
       messages:

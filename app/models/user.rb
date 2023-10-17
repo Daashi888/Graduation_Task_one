@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :favorite_pets, through: :favorites, source: :pet
 
   enum sex: { man: 0, woman: 1, etc: 2 }
-  enum role: { recruiter: 0, receiver: 1 }
+  enum role: { recruiter: 0, receiver: 1, admin: 2 }
   enum prefecture:{
      "選択してください":0,
      北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
