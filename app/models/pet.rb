@@ -18,6 +18,5 @@ class Pet < ApplicationRecord
   scope :title, -> (nickname){where('title LIKE ?' , "%#{nickname}%")}
   scope :select_animal, -> (p_select_animal){where(select_animal: p_select_animal)}
 
-  # enum select_animal: { 犬: 0, 猫: 1 }
-  # enum sex: { オス: 0, メス: 1 }
+  enum select_animal: { dog: 0, cat: 1 }
 end
