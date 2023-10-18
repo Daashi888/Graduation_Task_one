@@ -6,7 +6,7 @@
     <div>
       <div>
         <%= f.select :select_animal_eq, Pet.select_animals_i18n.invert.map{|key, value| [key, Pet.select_animals[value]]}, { include_blank: "選択してください" } %>
-        <%= select_tag "sort", options_for_select([['--選択してください--', ''], ['新しい順', 1], ['古い順', 2]]) %>
+        <%= select_tag "sort", options_for_select([['選択してください', ''], ['新しい順', 1], ['古い順', 2]]) %>
       </div>
       <div>
         <%= f.submit %>
