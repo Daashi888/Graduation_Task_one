@@ -4,6 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
 
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :nickname, presence: true
+  validates :postal_code, presence: true, length: { is: 7 }
+  validates :prefecture, presence: true
+  validates :city, presence: true
+  validates :ward_town, presence: true
+  validates :gender, presence: true
+  validates :occupation, presence: true
+  validates :role, presence: true
+  
   has_many :pets
   has_many :favorites, dependent: :destroy
   has_many :favorite_pets, through: :favorites, source: :pet
@@ -33,7 +44,7 @@ class User < ApplicationRecord
       user.prefecture = "東京都"
       user.city = "港区"
       user.ward_town = "六本木"
-      user.sex = "etc"
+      user.gender = "etc"
       user.occupation = "システムエンジニア"
       user.role = "recruiter"
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
@@ -51,7 +62,7 @@ class User < ApplicationRecord
       user.prefecture = "東京都"
       user.city = "港区"
       user.ward_town = "六本木"
-      user.sex = "etc"
+      user.gender = "etc"
       user.occupation = "システムエンジニア"
       user.role = "admin"
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要

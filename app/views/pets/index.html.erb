@@ -36,7 +36,7 @@
         <td><%= image_tag pet.image.url, size:"80x80" %></td>
         <td><%= pet.content %></td>
         <% if current_user %>
-          <td><%= link_to 'Show', pet %></td>
+          <td><%= link_to '詳細', pet %></td>
         <% end %>
       </tr>
     <% end %>

@@ -32,10 +32,14 @@
   <header>
     <p>アプリ</p>
   </header>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
   <footer>
     <p>Copyright &copy; 2023 One.</p>
   </footer>
-
-    <%= yield %>
   </body>
 </html>

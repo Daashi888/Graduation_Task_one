@@ -39,7 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :city , null:false
       t.string :ward_town , null:false
       t.string :other_address
-      t.integer :sex, null:false
+      t.integer :gender, null:false
       t.string :occupation, null:false
       t.integer :role, null:false
 

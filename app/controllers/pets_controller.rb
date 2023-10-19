@@ -3,6 +3,7 @@ class PetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   # GET /pets or /pets.json
   def index
+    # raise "エラーメッセージ"
     @pets = Pet.all
     @search = @pets.ransack(params[:q])
     @pets = @search.result
@@ -80,7 +81,7 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:image, :title, :content, :select_animal, :age, :sex, :negotiating, :current_location, :prefecture, :dog_breed, :cat_species, :castrated, :vaccinated)
+      params.require(:pet).permit(:image, :title, :content, :select_animal, :age, :gender, :current_location, :prefecture, :dog_breed, :cat_species, :castrated, :vaccinated)
     end
 
     def recruiter_check
