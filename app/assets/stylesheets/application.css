@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- header {
+header {
   position: fixed;
   width: 100%;
   height: 35px;
@@ -24,13 +24,28 @@
   color: white;
   text-align: center;
 }
+
 footer {
-position: fixed;
-width: 100%;
-left: 0;
-bottom: 0;
-height: 29px;
-background-color: aquamarine;
-color: white;
-text-align: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 29px;
+  background-color: aquamarine;
+  color: white;
+  text-align: center;
+}
+
+@import "bootstrap";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.profiler-results {
+  display: none;
 }
