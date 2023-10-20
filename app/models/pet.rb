@@ -23,8 +23,6 @@ class Pet < ApplicationRecord
 
   scope :early_registration_date, -> {order(created_at: :asc)}
   scope :old_registration_date, -> {order(created_at: :desc)}
-
-  scope :title, -> (nickname){where('title LIKE ?' , "%#{nickname}%")}
   scope :select_animal, -> (p_select_animal){where(select_animal: p_select_animal)}
 
   enum select_animal: { dog: 0, cat: 1 }
