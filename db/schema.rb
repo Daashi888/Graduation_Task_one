@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_16_011522) do
+ActiveRecord::Schema.define(version: 2023_10_12_021744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,18 +46,17 @@ ActiveRecord::Schema.define(version: 2023_10_16_011522) do
   end
 
   create_table "pets", force: :cascade do |t|
-    t.text "image"
-    t.text "content"
-    t.integer "select_animal"
-    t.string "age"
-    t.integer "sex"
-    t.boolean "negotiating"
-    t.string "current_location"
-    t.integer "prefecture"
+    t.text "image", null: false
+    t.text "content", null: false
+    t.integer "select_animal", null: false
+    t.string "age", null: false
+    t.integer "gender", null: false
+    t.string "current_location", null: false
+    t.integer "prefecture", null: false
     t.string "dog_breed"
     t.string "cat_species"
-    t.boolean "castrated"
-    t.boolean "vaccinated"
+    t.boolean "castrated", null: false
+    t.boolean "vaccinated", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
@@ -81,7 +80,7 @@ ActiveRecord::Schema.define(version: 2023_10_16_011522) do
     t.string "city", null: false
     t.string "ward_town", null: false
     t.string "other_address"
-    t.integer "sex", null: false
+    t.integer "gender", null: false
     t.string "occupation", null: false
     t.integer "role", null: false
     t.datetime "created_at", precision: 6, null: false

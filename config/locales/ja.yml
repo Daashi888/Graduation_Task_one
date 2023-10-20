@@ -2,7 +2,7 @@
 ja:
   enums:
     user:
-      sex:
+      gender:
         man: "男性"
         woman: "女性"
         etc: "答えたくない"
@@ -15,6 +15,28 @@ ja:
         dog: "犬"
         cat: "猫"
   activerecord:
+    attributes:
+      user:
+        last_name: "姓"
+        first_name: "名"
+        nickname: "ニックネーム"
+        postal_code: "郵便番号"
+        prefecture: "都道府県"
+        city: "市区町村"
+        ward_town: "番地"
+        gender: "建物名・部屋番号"
+        occupation: "職業"
+        role: "権限種別"
+      pet: 
+        image: "画像"
+        content: "本文、詳細情報"
+        select_animal: "犬、もしくは猫を"
+        age: "年齢"
+        gender: "性別"
+        current_location: "現在地"
+        prefecture: "都道府県"
+        castrated: "去勢の有無"
+        vaccinated: "ワクチン接種済み"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -195,3 +217,25 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  users:
+    last_name: "姓"
+    first_name: "名"
+    nickname: "ニックネーム"
+    postal_code: "郵便番号"
+    prefecture: "都道府県"
+    city: "市区町村"
+    ward_town: "番地"
+    gender: "建物名・部屋番号"
+    occupation: "職業"
+    role: "権限種別"
+  pets: 
+    image: "画像"
+    content: "本文、詳細情報"
+    select_animal: "犬、もしくは猫を"
+    age: "年齢"
+    gender: "性別"
+    current_location: "現在地"
+    prefecture: "都道府県"
+    castrated: "去勢の有無"
+    vaccinated: "ワクチン接種済み"
+  

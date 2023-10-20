@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :favorites, only: [:create, :destroy, :index]
   resources :pets
+  get '/top', to: 'pets#top'
   root 'pets#index'
 
   devise_for :users

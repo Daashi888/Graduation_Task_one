@@ -6,7 +6,7 @@
     <div>
       <div>
         <%= f.select :select_animal_eq, Pet.select_animals_i18n.invert.map{|key, value| [key, Pet.select_animals[value]]}, { include_blank: "選択してください" } %>
-        <%= select_tag "sort", options_for_select([['--選択してください--', ''], ['新しい順', 1], ['古い順', 2]]) %>
+        <%= select_tag "sort", options_for_select([['選択してください', ''], ['新しい順', 1], ['古い順', 2]]) %>
       </div>
       <div>
         <%= f.submit %>
@@ -14,11 +14,6 @@
     </div>
   </div>
 <% end %>
-
-<p>
-  <%= link_to '新しい順', pets_path(early_registration_date: "true") %>
-  <%= link_to '古い順', pets_path(old_registration_date: "true") %>
-</p>
 
 <table>
   <thead>
@@ -36,7 +31,7 @@
         <td><%= image_tag pet.image.url, size:"80x80" %></td>
         <td><%= pet.content %></td>
         <% if current_user %>
-          <td><%= link_to 'Show', pet %></td>
+          <td><%= link_to '詳細', pet %></td>
         <% end %>
       </tr>
     <% end %>
