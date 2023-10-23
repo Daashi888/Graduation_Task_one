@@ -15,10 +15,12 @@
   <% end %>
 <% end %>
 
-<%= link_to 'メッセージに進む', conversations_path %>
-<%= link_to 'Back', pets_path %>
+<% unless @pet.user_id == current_user.id %>
+  <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @pet.user.id), method: :post %>
+<% end %>
+<%= link_to 'TOPに戻る', pets_path %>
 
 <% if current_user.role == "recruiter" && @pet.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_pet_path(@pet) %>
-  <%= link_to 'Destroy', @pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to '編集', edit_pet_path(@pet) %>
+  <%= link_to '削除', @pet, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
