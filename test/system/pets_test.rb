@@ -24,7 +24,7 @@ class PetsTest < ApplicationSystemTestCase
     check "Negotiating" if @pet.negotiating
     fill_in "Prefecture", with: @pet.prefecture
     fill_in "Select animal", with: @pet.select_animal
-    fill_in "Sex", with: @pet.sex
+    fill_in "Gender", with: @pet.gender
     fill_in "Title", with: @pet.title
     check "Vaccinated" if @pet.vaccinated
     click_on "Create Pet"
@@ -47,7 +47,7 @@ class PetsTest < ApplicationSystemTestCase
     check "Negotiating" if @pet.negotiating
     fill_in "Prefecture", with: @pet.prefecture
     fill_in "Select animal", with: @pet.select_animal
-    fill_in "Sex", with: @pet.sex
+    fill_in "Gender", with: @pet.gender
     fill_in "Title", with: @pet.title
     check "Vaccinated" if @pet.vaccinated
     click_on "Update Pet"

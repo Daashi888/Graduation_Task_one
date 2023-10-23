@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>画像:</strong>
   <%= image_tag @pet.image.url %>
 </p>
 
@@ -15,7 +15,7 @@
   <% end %>
 <% end %>
 
-<%= link_to '飼い主の画面へ', user_path(@pet.user) %>
+<%= link_to 'メッセージに進む', conversations_path %>
 <%= link_to 'Back', pets_path %>
 
 <% if current_user.role == "recruiter" && @pet.user_id == current_user.id %>

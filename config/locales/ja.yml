@@ -24,7 +24,7 @@ ja:
         prefecture: "都道府県"
         city: "市区町村"
         ward_town: "番地"
-        gender: "建物名・部屋番号"
+        gender: "性別"
         occupation: "職業"
         role: "権限種別"
       pet: 
