@@ -10,8 +10,6 @@ class Pet < ApplicationRecord
   validates :gender, presence: true
   validates :current_location, presence: true
   validates :prefecture, presence: true
-  validates :castrated, presence: true
-  validates :vaccinated, presence: true
 
   def self.ransackable_attributes(auth_object = nil)
     ["age", "castrated", "cat_species", "content", "created_at", "current_location", "dog_breed", "id", "image", "negotiating", "prefecture", "select_animal", "gender", "title", "updated_at", "user_id", "vaccinated"]

@@ -50,7 +50,7 @@
 
   <div class="field">
     <%= f.label :性別 %>
-    <%= f.select :sex, User.sexes.keys.map {|k| [I18n.t("enums.user.sex.#{k}"), k]}, { include_blank: "選択してください"} %>
+    <%= f.select :gender, User.genders.keys.map {|k| [I18n.t("enums.user.gender.#{k}"), k]}, { include_blank: "選択してください"} %>
   </div>
 
   <div class="field">
@@ -60,7 +60,6 @@
 
   <div class="field">
     <%= f.label :権限種別 %>
-    <#%= f.select :role, User.roles.keys.map {|k| [I18n.t("enums.user.role.#{k}"), k]}, { include_blank: "選択してください"} %>
     <%= f.select :role, [["里親募集主", "recruiter"], ["譲渡希望者", "receiver"]], include_blank: "選択して下さい" %>
   </div>
 

@@ -6,7 +6,7 @@ one:
   content: MyText
   select_animal: 1
   age: MyString
-  sex: 1
+  gender: 1
   negotiating: false
   current_location: MyString
   prefecture: MyString
@@ -21,7 +21,7 @@ two:
   content: MyText
   select_animal: 1
   age: MyString
-  sex: 1
+  gender: 1
   negotiating: false
   current_location: MyString
   prefecture: MyString

@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_pets, through: :favorites, source: :pet
 
-  enum sex: { man: 0, woman: 1, etc: 2 }
+  enum gender: { man: 0, woman: 1, etc: 2 }
   enum role: { recruiter: 0, receiver: 1, admin: 2 }
   enum prefecture:{
      "選択してください":0,

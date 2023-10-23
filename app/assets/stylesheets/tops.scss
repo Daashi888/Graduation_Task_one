@@ -1,9 +1,8 @@
 .cover {
   background-image: url(/assets/one_top.png);
-  height: 100%;
+  height: 150vh;
   width: 100%;
-  background-size: 100%;
+  background-size: auto;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: center center;
 }
-
